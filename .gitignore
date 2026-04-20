@@ -2,3 +2,7 @@
 [Bb]in/
 [Oo]bj/
 *.user
+bin/
+obj/
+.vs/
+
