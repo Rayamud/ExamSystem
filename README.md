@@ -56,23 +56,24 @@ DAL — Data Access Layer (Stored Procedures → SQL Server)
 
 
 
+## DataBase Schema Tables
 
-
-
+```mermaid
 erDiagram
-    Users ||--o{ StudentAnswers : submits
-    Users ||--o{ StudentAnswerHistory : logs
-    Examsubject ||--o{ Questions : contains
-    Examsubject ||--o{ Results : generates
-    Questions ||--o{ StudentAnswers : answered
-    Results ||--o{ StudentAnswerHistory : references
+    USERS ||--o{ RESULTS : "has"
+    USERS ||--o{ STUDENT_ANSWER_HISTORY : "performs"
+    EXAM_SUBJECT ||--o{ QUESTIONS : "contains"
+    EXAM_SUBJECT ||--o{ RESULTS : "recorded in"
+    EXAM_SUBJECT ||--o{ STUDENT_ANSWER_HISTORY : "tracked in"
+    QUESTIONS ||--o{ STUDENT_ANSWER_HISTORY : "logged for"
+    RESULTS ||--o{ STUDENT_ANSWER_HISTORY : "links to"
 
-    Users {
+    USERS {
         int UserID PK
         string FirstName
         string LastName
         string Username
-        string Password
+        string Password_Hashed
         datetime DateOfBirth
         tinyint Gender
         string Email
@@ -81,14 +82,14 @@ erDiagram
         tinyint Role
     }
 
-    Examsubject {
+    EXAM_SUBJECT {
         int ExamID PK
         string Title
         string Description
         datetime2 CreatedDate
     }
 
-    Questions {
+    QUESTIONS {
         int QuestionID PK
         int ExamID FK
         string QuestionText
@@ -100,7 +101,7 @@ erDiagram
         string Subject
     }
 
-    Results {
+    RESULTS {
         int ResultID PK
         int StudentID FK
         int ExamID FK
@@ -108,7 +109,7 @@ erDiagram
         datetime SubmissionDate
     }
 
-    StudentAnswerHistory {
+    STUDENT_ANSWER_HISTORY {
         int HistoryID PK
         int StudentID FK
         int ExamID FK
@@ -119,6 +120,12 @@ erDiagram
         string ActionType
         datetime TimeSpan
     }
+
+
+
+
+```
+
 
 
 ---
