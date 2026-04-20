@@ -24,6 +24,70 @@ A desktop application built with **C# WinForms** and **SQL Server** for managing
 - Role-Based Access Control (Admin / Student)
 - **Remember Me** — saves credentials across sessions
 
+
+erDiagram
+    Users ||--o{ StudentAnswers : submits
+    Users ||--o{ StudentAnswerHistory : logs
+    Examsubject ||--o{ Questions : contains
+    Examsubject ||--o{ Results : generates
+    Questions ||--o{ StudentAnswers : answered
+    Results ||--o{ StudentAnswerHistory : references
+
+    Users {
+        int UserID PK
+        string FirstName
+        string LastName
+        string Username
+        string Password
+        datetime DateOfBirth
+        tinyint Gender
+        string Email
+        string Address
+        string ImagePath
+        tinyint Role
+    }
+
+    Examsubject {
+        int ExamID PK
+        string Title
+        string Description
+        datetime2 CreatedDate
+    }
+
+    Questions {
+        int QuestionID PK
+        int ExamID FK
+        string QuestionText
+        string OptionA
+        string OptionB
+        string OptionC
+        string OptionD
+        string CorrectOption
+        string Subject
+    }
+
+    Results {
+        int ResultID PK
+        int StudentID FK
+        int ExamID FK
+        int Score
+        datetime SubmissionDate
+    }
+
+    StudentAnswerHistory {
+        int HistoryID PK
+        int StudentID FK
+        int ExamID FK
+        int QuestionID FK
+        int ResultID FK
+        string ChosenOption
+        bit IsCorrect
+        string ActionType
+        datetime TimeSpan
+    }
+
+
+
 ### 👤 Admin Panel
 - **User Management** — Create, Edit, Search users (filter by First Name, Role, or Gender)
 - **Exam Management** — Create, Edit, Delete exams with title, date, and description
