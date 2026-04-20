@@ -25,6 +25,40 @@ A desktop application built with **C# WinForms** and **SQL Server** for managing
 - **Remember Me** — saves credentials across sessions
 
 
+### 👤 Admin Panel
+- **User Management** — Create, Edit, Search users (filter by First Name, Role, or Gender)
+- **Exam Management** — Create, Edit, Delete exams with title, date, and description
+- **Question Management** — Add multiple-choice questions (4 options) to any exam
+- **Find Exam / Question** — Search by Subject or Title
+- **Student Results** — View all attempts with scores and submission timestamps
+- **Exam Info Dashboard** — Card-based overview showing question count and creation date per exam
+
+### 🎓 Student Panel
+- Browse available exams as info cards (title, description, date, question count)
+- **Take Exam** — scrollable multi-question interface with radio button answers
+- **View Results** — score, correct answers, percentage, and submission date per exam
+
+---
+
+## 🏗️ Architecture
+
+```
+UI Layer (WinForms Forms)
+        ↓
+BLL — Business Logic Layer (validation, Upsert logic, business rules)
+        ↓
+DAL — Data Access Layer (Stored Procedures → SQL Server)
+```
+
+- **Upsert logic** in BLL handles both Create and Update in one flow, preventing duplicate records
+- All DB calls go through **Parameterized Stored Procedures** to prevent SQL Injection
+- **Logging Utility** with automated failover to local file if Windows Event Log is unavailable
+
+
+
+
+
+
 erDiagram
     Users ||--o{ StudentAnswers : submits
     Users ||--o{ StudentAnswerHistory : logs
@@ -86,36 +120,6 @@ erDiagram
         datetime TimeSpan
     }
 
-
-
-### 👤 Admin Panel
-- **User Management** — Create, Edit, Search users (filter by First Name, Role, or Gender)
-- **Exam Management** — Create, Edit, Delete exams with title, date, and description
-- **Question Management** — Add multiple-choice questions (4 options) to any exam
-- **Find Exam / Question** — Search by Subject or Title
-- **Student Results** — View all attempts with scores and submission timestamps
-- **Exam Info Dashboard** — Card-based overview showing question count and creation date per exam
-
-### 🎓 Student Panel
-- Browse available exams as info cards (title, description, date, question count)
-- **Take Exam** — scrollable multi-question interface with radio button answers
-- **View Results** — score, correct answers, percentage, and submission date per exam
-
----
-
-## 🏗️ Architecture
-
-```
-UI Layer (WinForms Forms)
-        ↓
-BLL — Business Logic Layer (validation, Upsert logic, business rules)
-        ↓
-DAL — Data Access Layer (Stored Procedures → SQL Server)
-```
-
-- **Upsert logic** in BLL handles both Create and Update in one flow, preventing duplicate records
-- All DB calls go through **Parameterized Stored Procedures** to prevent SQL Injection
-- **Logging Utility** with automated failover to local file if Windows Event Log is unavailable
 
 ---
 
