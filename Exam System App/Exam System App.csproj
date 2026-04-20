@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E4942DBD-47CD-4423-BB5F-5879F93D2546}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Exam_System_App</RootNamespace>
+    <AssemblyName>Exam System App</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>preview</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>preview</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="clsGlobal.cs" />
+    <Compile Include="clsValidation.cs" />
+    <Compile Include="ctrlExamInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlExamInfo.Designer.cs">
+      <DependentUpon>ctrlExamInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlExamInfoWithTakeButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlExamInfoWithTakeButton.Designer.cs">
+      <DependentUpon>ctrlExamInfoWithTakeButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlTakeExam.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlTakeExam.Designer.cs">
+      <DependentUpon>ctrlTakeExam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlUserCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlUserCard.Designer.cs">
+      <DependentUpon>ctrlUserCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlUserCardWithFilter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlUserCardWithFilter.Designer.cs">
+      <DependentUpon>ctrlUserCardWithFilter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddUpdateExam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddUpdateExam.Designer.cs">
+      <DependentUpon>frmAddUpdateExam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddUpdateQuestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddUpdateQuestion.Designer.cs">
+      <DependentUpon>frmAddUpdateQuestion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddUpdateUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddUpdateUser.Designer.cs">
+      <DependentUpon>frmAddUpdateUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAdminMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAdminMain.Designer.cs">
+      <DependentUpon>FrmAdminMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChangePassword.Designer.cs">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmExamInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmExamInfo.Designer.cs">
+      <DependentUpon>frmExamInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFindQuestionOfExam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFindQuestionOfExam.Designer.cs">
+      <DependentUpon>frmFindQuestionOfExam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFindUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFindUser.Designer.cs">
+      <DependentUpon>frmFindUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmListExam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListExam.Designer.cs">
+      <DependentUpon>frmListExam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmListStudentResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListStudentResult.Designer.cs">
+      <DependentUpon>frmListStudentResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmListUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListUser.Designer.cs">
+      <DependentUpon>frmListUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmResults.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmResults.Designer.cs">
+      <DependentUpon>frmResults.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmShowResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmShowResult.Designer.cs">
+      <DependentUpon>frmShowResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmShowUserInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmShowUserInfo.Designer.cs">
+      <DependentUpon>frmShowUserInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStudentMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStudentMain.Designer.cs">
+      <DependentUpon>frmStudentMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTakeExam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTakeExam.Designer.cs">
+      <DependentUpon>frmTakeExam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ctrlExamInfo.resx">
+      <DependentUpon>ctrlExamInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlExamInfoWithTakeButton.resx">
+      <DependentUpon>ctrlExamInfoWithTakeButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlTakeExam.resx">
+      <DependentUpon>ctrlTakeExam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlUserCard.resx">
+      <DependentUpon>ctrlUserCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlUserCardWithFilter.resx">
+      <DependentUpon>ctrlUserCardWithFilter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddUpdateExam.resx">
+      <DependentUpon>frmAddUpdateExam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddUpdateQuestion.resx">
+      <DependentUpon>frmAddUpdateQuestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddUpdateUser.resx">
+      <DependentUpon>frmAddUpdateUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAdminMain.resx">
+      <DependentUpon>FrmAdminMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmChangePassword.resx">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmExamInfo.resx">
+      <DependentUpon>frmExamInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFindQuestionOfExam.resx">
+      <DependentUpon>frmFindQuestionOfExam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFindUser.resx">
+      <DependentUpon>frmFindUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListExam.resx">
+      <DependentUpon>frmListExam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListStudentResult.resx">
+      <DependentUpon>frmListStudentResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListUser.resx">
+      <DependentUpon>frmListUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmResults.resx">
+      <DependentUpon>frmResults.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmShowResult.resx">
+      <DependentUpon>frmShowResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmShowUserInfo.resx">
+      <DependentUpon>frmShowUserInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStudentMain.resx">
+      <DependentUpon>frmStudentMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTakeExam.resx">
+      <DependentUpon>frmTakeExam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ManageUsers.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\group-students-posing-table.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\manageExam.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dashoboard.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessLogicLayer\BusinessLogicLayer.csproj">
+      <Project>{76f0eaad-720a-46e1-9e69-47a0ce4f675f}</Project>
+      <Name>BusinessLogicLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Male_215.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\female_215.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7559125.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
